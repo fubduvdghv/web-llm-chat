@@ -26,6 +26,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  basePath: mode === "export" ? "/web-llm-chat" : "",
   webpack(config, { isServer }) {
     config.module.rules.push({
       test: /\.svg$/,
