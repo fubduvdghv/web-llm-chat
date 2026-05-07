@@ -13,7 +13,6 @@ import LoadingIcon from "../icons/three-dots.svg";
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { showImageModal } from "./ui-lib";
-import { PluggableList } from "react-markdown/lib";
 
 export function Mermaid(props: { code: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -142,7 +141,7 @@ function _MarkDownContent(props: { content: string }) {
 
   return (
     <ReactMarkdown
-      remarkPlugins={[RemarkMath, RemarkGfm, RemarkBreaks] as PluggableList}
+      remarkPlugins={[RemarkMath, RemarkGfm, RemarkBreaks]}
       rehypePlugins={
         [
           RehypeKatex,
@@ -153,7 +152,7 @@ function _MarkDownContent(props: { content: string }) {
               ignoreMissing: true,
             },
           ],
-        ] as PluggableList
+        ]
       }
       components={{
         pre: PreCode as any,

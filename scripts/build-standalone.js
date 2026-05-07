@@ -10,6 +10,7 @@ process.env.BUILD_MODE = 'standalone';
 try {
   execSync('next build', {
     stdio: 'inherit',
+    shell: true,
     env: process.env
   });
 } catch (error) {

@@ -10,6 +10,7 @@ process.env.BUILD_MODE = 'export';
 try {
   execSync('next dev', {
     stdio: 'inherit',
+    shell: true,
     env: process.env
   });
 } catch (error) {
